@@ -107,7 +107,8 @@ object NotebookBuild extends Build {
         akkaTestkit,
         slf4jLog4j,
         commonsIO,
-        scalaTest
+        scalaTest,
+        spark, graphx
       ),
 
       libraryDependencies ++= Seq(
@@ -136,6 +137,7 @@ object NotebookBuild extends Build {
         commonsIO,
         commonsHttp,
         scalaTest,
+        spark, graphx,
         "org.fusesource.scalate" %% "scalate-core" % "1.6.1"
       )
     )
@@ -155,6 +157,8 @@ object NotebookBuild extends Build {
     val akkaTestkit          = "com.typesafe.akka"         %%        "akka-testkit"         %    akkaVersion    % "test"
     val scalaTest            = "org.scalatest"             %%          "scalatest"          %       "2.0"       % "test"
     val scalaMock            = ProjectRef(uri("https://github.com/paulp/ScalaMock.git"), "scalatest") % "test"
+    val spark                = "org.apache.spark"          % "spark-core_2.10"          % "0.9.1"
+    val graphx                = "org.apache.spark"          % "spark-graphx_2.10"          % "0.9.1"
   }
 
 
